@@ -1,0 +1,13 @@
+id = "cuesheet"
+name = "CUE Sheet"
+version = "0.1.0"
+schema_version = 1
+authors = ["Ari <652673+arigit@users.noreply.github.com>"]
+description = "CUE sheet (.cue) support: syntax highlighting, outline, snippets"
+repository = "https://github.com/arigit/zed-cuesheet"
+snippets = ["snippets/cue sheet.json"]
+
+[grammars.cuesheet]
+repository = "https://github.com/arigit/zed-cuesheet"
+rev = "0cbc0ebb2c46a42c7a2dab643ee62b59dbc69c6a"
+path = "tree-sitter-cuesheet"
