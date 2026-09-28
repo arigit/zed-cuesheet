@@ -1,0 +1,588 @@
+[
+  {
+    "type": "catalog_command",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "code",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cdtextfile_command",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "file",
+    "named": true,
+    "fields": {
+      "header": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "file_command",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "catalog_command",
+          "named": true
+        },
+        {
+          "type": "cdtextfile_command",
+          "named": true
+        },
+        {
+          "type": "flags_command",
+          "named": true
+        },
+        {
+          "type": "index_command",
+          "named": true
+        },
+        {
+          "type": "isrc_command",
+          "named": true
+        },
+        {
+          "type": "performer_command",
+          "named": true
+        },
+        {
+          "type": "postgap_command",
+          "named": true
+        },
+        {
+          "type": "pregap_command",
+          "named": true
+        },
+        {
+          "type": "rem_command",
+          "named": true
+        },
+        {
+          "type": "songwriter_command",
+          "named": true
+        },
+        {
+          "type": "title_command",
+          "named": true
+        },
+        {
+          "type": "track",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "file_command",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "word",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "file_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "file_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "flag",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "flags_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "flag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "index_command",
+    "named": true,
+    "fields": {
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "time": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "timestamp",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "isrc_command",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "code",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "performer_command",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unquoted_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "postgap_command",
+    "named": true,
+    "fields": {
+      "time": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "timestamp",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pregap_command",
+    "named": true,
+    "fields": {
+      "time": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "timestamp",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "rem_command",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "rem_key",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unquoted_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "rem_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "songwriter_command",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unquoted_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "catalog_command",
+          "named": true
+        },
+        {
+          "type": "cdtextfile_command",
+          "named": true
+        },
+        {
+          "type": "file",
+          "named": true
+        },
+        {
+          "type": "flags_command",
+          "named": true
+        },
+        {
+          "type": "index_command",
+          "named": true
+        },
+        {
+          "type": "isrc_command",
+          "named": true
+        },
+        {
+          "type": "performer_command",
+          "named": true
+        },
+        {
+          "type": "postgap_command",
+          "named": true
+        },
+        {
+          "type": "pregap_command",
+          "named": true
+        },
+        {
+          "type": "rem_command",
+          "named": true
+        },
+        {
+          "type": "songwriter_command",
+          "named": true
+        },
+        {
+          "type": "title_command",
+          "named": true
+        },
+        {
+          "type": "track",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title_command",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "unquoted_value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "track",
+    "named": true,
+    "fields": {
+      "header": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "track_command",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "catalog_command",
+          "named": true
+        },
+        {
+          "type": "cdtextfile_command",
+          "named": true
+        },
+        {
+          "type": "flags_command",
+          "named": true
+        },
+        {
+          "type": "index_command",
+          "named": true
+        },
+        {
+          "type": "isrc_command",
+          "named": true
+        },
+        {
+          "type": "performer_command",
+          "named": true
+        },
+        {
+          "type": "postgap_command",
+          "named": true
+        },
+        {
+          "type": "pregap_command",
+          "named": true
+        },
+        {
+          "type": "rem_command",
+          "named": true
+        },
+        {
+          "type": "songwriter_command",
+          "named": true
+        },
+        {
+          "type": "title_command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "track_command",
+    "named": true,
+    "fields": {
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "track_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "word",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "CATALOG",
+    "named": false
+  },
+  {
+    "type": "CDTEXTFILE",
+    "named": false
+  },
+  {
+    "type": "FILE",
+    "named": false
+  },
+  {
+    "type": "FLAGS",
+    "named": false
+  },
+  {
+    "type": "INDEX",
+    "named": false
+  },
+  {
+    "type": "ISRC",
+    "named": false
+  },
+  {
+    "type": "PERFORMER",
+    "named": false
+  },
+  {
+    "type": "POSTGAP",
+    "named": false
+  },
+  {
+    "type": "PREGAP",
+    "named": false
+  },
+  {
+    "type": "REM",
+    "named": false
+  },
+  {
+    "type": "SONGWRITER",
+    "named": false
+  },
+  {
+    "type": "TITLE",
+    "named": false
+  },
+  {
+    "type": "TRACK",
+    "named": false
+  },
+  {
+    "type": "code",
+    "named": true
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "string_content",
+    "named": true
+  },
+  {
+    "type": "timestamp",
+    "named": true
+  },
+  {
+    "type": "track_type",
+    "named": true
+  },
+  {
+    "type": "unquoted_value",
+    "named": true
+  }
+]

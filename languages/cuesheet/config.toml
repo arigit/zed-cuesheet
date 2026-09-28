@@ -1,0 +1,9 @@
+name = "CUE Sheet"
+grammar = "cuesheet"
+path_suffixes = ["cue", "CUE", "Cue"]
+line_comments = ["REM "]
+tab_size = 2
+hard_tabs = false
+autoclose_before = " \t\n"
+brackets = [{ start = "\"", end = "\"", close = true, newline = false }]
+word_characters = ["_", "/"]

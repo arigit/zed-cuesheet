@@ -1,0 +1,22 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "cuesheet",
+      "camelcase": "Cuesheet",
+      "title": "CUE Sheet",
+      "scope": "source.cuesheet",
+      "file-types": ["cue", "CUE"],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^(cue|cuesheet)$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "CUE sheet grammar for tree-sitter",
+    "authors": [{ "name": "Ari" }],
+    "links": { "repository": "https://github.com/arigit/zed-cuesheet" }
+  },
+  "bindings": { "c": false, "go": false, "node": false, "python": false, "rust": false, "swift": false }
+}

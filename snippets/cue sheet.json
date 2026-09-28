@@ -1,0 +1,169 @@
+{
+  "New CUE sheet": {
+    "prefix": "new",
+    "body": [
+      "REM GENRE \"${1:Genre}\"",
+      "REM DATE ${2:2024}",
+      "PERFORMER \"${3:Artist}\"",
+      "TITLE \"${4:Album}\"",
+      "FILE \"${5:album}.flac\" WAVE",
+      "  TRACK 01 AUDIO",
+      "    TITLE \"${6:Song}\"",
+      "    PERFORMER \"${3:Artist}\"",
+      "    INDEX 01 00:00:00",
+      "$0"
+    ],
+    "description": "New single-file CUE sheet (one image, many tracks)"
+  },
+  "New CUE sheet (file per track)": {
+    "prefix": "newfiles",
+    "body": [
+      "PERFORMER \"${1:Artist}\"",
+      "TITLE \"${2:Album}\"",
+      "FILE \"01 - ${3:Song}.flac\" WAVE",
+      "  TRACK 01 AUDIO",
+      "    TITLE \"${3:Song}\"",
+      "    INDEX 01 00:00:00",
+      "FILE \"02 - ${4:Song}.flac\" WAVE",
+      "  TRACK 02 AUDIO",
+      "    TITLE \"${4:Song}\"",
+      "    INDEX 01 00:00:00",
+      "$0"
+    ],
+    "description": "New CUE sheet with one audio file per track"
+  },
+  "Track": {
+    "prefix": "track",
+    "body": [
+      "TRACK ${1:01} ${2|AUDIO,CDG,MODE1/2048,MODE1/2352,MODE2/2336,MODE2/2352,CDI/2336,CDI/2352|}",
+      "  TITLE \"${3:Title}\"",
+      "  PERFORMER \"${4:Performer}\"",
+      "  INDEX 01 ${5:00:00:00}",
+      "$0"
+    ],
+    "description": "New track"
+  },
+  "Track with gaps": {
+    "prefix": "trackgap",
+    "body": [
+      "TRACK ${1:01} AUDIO",
+      "  TITLE \"${2:Title}\"",
+      "  PERFORMER \"${3:Performer}\"",
+      "  FLAGS DCP",
+      "  PREGAP 00:02:00",
+      "  INDEX 01 ${4:00:00:00}",
+      "  POSTGAP 00:02:00",
+      "$0"
+    ],
+    "description": "New track with FLAGS, PREGAP and POSTGAP"
+  },
+  "FILE": {
+    "prefix": "FILE",
+    "body": "FILE \"${1:file}.${2:flac}\" ${3|WAVE,MP3,AIFF,BINARY,MOTOROLA|}",
+    "description": "Audio or data file (WAVE, MP3, AIFF, BINARY, MOTOROLA)"
+  },
+  "TRACK": {
+    "prefix": "TRACK",
+    "body": "TRACK ${1:01} ${2|AUDIO,CDG,MODE1/2048,MODE1/2352,MODE2/2336,MODE2/2352,CDI/2336,CDI/2352|}",
+    "description": "Track number and data type"
+  },
+  "INDEX": {
+    "prefix": "INDEX",
+    "body": "INDEX ${1:01} ${2:00}:${3:00}:${4:00}",
+    "description": "Index point (mm:ss:ff, 75 frames per second)"
+  },
+  "TITLE": {
+    "prefix": "TITLE",
+    "body": "TITLE \"$1\"",
+    "description": "Disc or track title"
+  },
+  "PERFORMER": {
+    "prefix": "PERFORMER",
+    "body": "PERFORMER \"$1\"",
+    "description": "Disc or track performer"
+  },
+  "SONGWRITER": {
+    "prefix": "SONGWRITER",
+    "body": "SONGWRITER \"$1\"",
+    "description": "Disc or track songwriter"
+  },
+  "FLAGS": {
+    "prefix": "FLAGS",
+    "body": "FLAGS ${1|DCP,4CH,PRE,SCMS|}",
+    "description": "Track sub-code flags (DCP, 4CH, PRE, SCMS)"
+  },
+  "ISRC": {
+    "prefix": "ISRC",
+    "body": "ISRC ${1:CCXXXYYNNNNN}",
+    "description": "International Standard Recording Code (12 characters)"
+  },
+  "CATALOG": {
+    "prefix": "CATALOG",
+    "body": "CATALOG ${1:0000000000000}",
+    "description": "Media Catalog Number (13-digit UPC/EAN)"
+  },
+  "CDTEXTFILE": {
+    "prefix": "CDTEXTFILE",
+    "body": "CDTEXTFILE \"${1:file}.cdt\"",
+    "description": "CD-TEXT file"
+  },
+  "PREGAP": {
+    "prefix": "PREGAP",
+    "body": "PREGAP 00:${1:02}:00",
+    "description": "Silence inserted before the track"
+  },
+  "POSTGAP": {
+    "prefix": "POSTGAP",
+    "body": "POSTGAP 00:${1:02}:00",
+    "description": "Silence inserted after the track"
+  },
+  "REM GENRE": {
+    "prefix": "REM GENRE",
+    "body": "REM GENRE \"$1\"",
+    "description": "Genre"
+  },
+  "REM DATE": {
+    "prefix": "REM DATE",
+    "body": "REM DATE ${1:2024}",
+    "description": "Release year"
+  },
+  "REM DISCID": {
+    "prefix": "REM DISCID",
+    "body": "REM DISCID ${1:00000000}",
+    "description": "FreeDB disc ID"
+  },
+  "REM COMMENT": {
+    "prefix": "REM COMMENT",
+    "body": "REM COMMENT \"$1\"",
+    "description": "Comment (e.g. ripping software)"
+  },
+  "REM COMPOSER": {
+    "prefix": "REM COMPOSER",
+    "body": "REM COMPOSER \"$1\"",
+    "description": "Composer"
+  },
+  "REM DISCNUMBER / TOTALDISCS": {
+    "prefix": "REM DISCNUMBER",
+    "body": [
+      "REM DISCNUMBER ${1:1}",
+      "REM TOTALDISCS ${2:1}"
+    ],
+    "description": "Disc number within a multi-disc set"
+  },
+  "REM REPLAYGAIN (album)": {
+    "prefix": "REM REPLAYGAIN_ALBUM",
+    "body": [
+      "REM REPLAYGAIN_ALBUM_GAIN ${1:-0.00} dB",
+      "REM REPLAYGAIN_ALBUM_PEAK ${2:1.000000}"
+    ],
+    "description": "Album ReplayGain values"
+  },
+  "REM REPLAYGAIN (track)": {
+    "prefix": "REM REPLAYGAIN_TRACK",
+    "body": [
+      "REM REPLAYGAIN_TRACK_GAIN ${1:-0.00} dB",
+      "REM REPLAYGAIN_TRACK_PEAK ${2:1.000000}"
+    ],
+    "description": "Track ReplayGain values"
+  }
+}

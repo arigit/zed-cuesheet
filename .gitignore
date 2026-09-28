@@ -1,0 +1,10 @@
+# Built by Zed when installing as a dev extension
+/grammars/
+*.wasm
+extension.wasm
+
+# tree-sitter build artifacts
+/tree-sitter-cuesheet/build/
+/tree-sitter-cuesheet/*.so
+/tree-sitter-cuesheet/*.dylib
+/tree-sitter-cuesheet/node_modules/

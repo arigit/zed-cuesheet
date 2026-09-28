@@ -1,0 +1,193 @@
+==================
+Disc metadata
+==================
+
+REM GENRE "Rock"
+REM DATE 1999
+CATALOG 0724382975229
+PERFORMER "Artist"
+TITLE Unquoted Title
+SONGWRITER "Writer"
+CDTEXTFILE "disc.cdt"
+
+---
+
+(source_file
+  (rem_command
+    (rem_key)
+    (string
+      (string_content)))
+  (rem_command
+    (rem_key)
+    (unquoted_value))
+  (catalog_command
+    (code))
+  (performer_command
+    (string
+      (string_content)))
+  (title_command
+    (unquoted_value))
+  (songwriter_command
+    (string
+      (string_content)))
+  (cdtextfile_command
+    (string
+      (string_content))))
+
+==================
+Free-form comments
+==================
+
+REM this is a comment
+REM
+REM "quoted comment"
+
+---
+
+(source_file
+  (rem_command
+    (rem_key)
+    (unquoted_value))
+  (rem_command)
+  (rem_command
+    (string
+      (string_content))))
+
+==================
+File with tracks
+==================
+
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "One"
+    FLAGS DCP 4CH
+    ISRC USRC17607839
+    PREGAP 00:02:00
+    INDEX 01 00:00:00
+  TRACK 02 MODE1/2352
+    INDEX 00 03:10:20
+    INDEX 01 03:12:20
+    POSTGAP 00:02:00
+
+---
+
+(source_file
+  (file
+    (file_command
+      (string
+        (string_content))
+      (file_type))
+    (track
+      (track_command
+        (number)
+        (track_type))
+      (title_command
+        (string
+          (string_content)))
+      (flags_command
+        (flag)
+        (flag))
+      (isrc_command
+        (code))
+      (pregap_command
+        (timestamp))
+      (index_command
+        (number)
+        (timestamp)))
+    (track
+      (track_command
+        (number)
+        (track_type))
+      (index_command
+        (number)
+        (timestamp))
+      (index_command
+        (number)
+        (timestamp))
+      (postgap_command
+        (timestamp)))))
+
+==================
+FILE inside a track (gaps appended to previous file)
+==================
+
+FILE "01.wav" WAVE
+  TRACK 01 AUDIO
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    INDEX 00 04:30:12
+FILE "02.wav" WAVE
+    INDEX 01 00:00:00
+
+---
+
+(source_file
+  (file
+    (file_command
+      (string
+        (string_content))
+      (file_type))
+    (track
+      (track_command
+        (number)
+        (track_type))
+      (index_command
+        (number)
+        (timestamp)))
+    (track
+      (track_command
+        (number)
+        (track_type))
+      (index_command
+        (number)
+        (timestamp))))
+  (file
+    (file_command
+      (string
+        (string_content))
+      (file_type))
+    (index_command
+      (number)
+      (timestamp))))
+
+==================
+Lower-case keywords and no trailing newline
+==================
+
+file x.mp3 MP3
+  track 1 audio
+    index 01 00:00:00
+---
+
+(source_file
+  (file
+    (file_command
+      (word)
+      (file_type))
+    (track
+      (track_command
+        (number)
+        (track_type))
+      (index_command
+        (number)
+        (timestamp)))))
+
+==================
+Incomplete lines
+==================
+
+TRACK 01 AUDIO
+  TITLE
+  INDEX 01 00:00:00
+
+---
+
+(source_file
+  (track
+    (track_command
+      (number)
+      (track_type))
+    (title_command)
+    (index_command
+      (number)
+      (timestamp))))
