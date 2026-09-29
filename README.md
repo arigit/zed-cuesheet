@@ -32,6 +32,20 @@ Zed downloads the grammar at the commit pinned in `extension.toml`, compiles it 
 > { "file_types": { "CUE Sheet": ["*.cue"] } }
 > ```
 
+### Recommended settings
+
+Pressing Enter on a `REM` line makes Zed continue the comment by inserting `REM ` on the next line. In a CUE sheet the next line is usually a different command (`CATALOG`, `TITLE`, another `REM` field, ...), so the prefix mostly gets in your way, and Shift-Tab can't remove it because it isn't indentation. To turn this off for CUE sheets only, add to your `settings.json`:
+
+```json
+{
+  "languages": {
+    "CUE Sheet": { "extend_comment_on_newline": false }
+  }
+}
+```
+
+Toggle comment (`cmd-/` / `ctrl-/`) keeps working.
+
 ## Repository layout
 
 | Path | Contents |
